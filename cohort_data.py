@@ -57,11 +57,17 @@ def students_by_cohort(filename, cohort='All'):
       - list[list]: a list of lists
     """
 
-    students = []
+    cohort_data = open(filename)
 
-    # TODO: replace this with your code
+    for line in cohort_data:
+      line = line.rstrip()
+      students = line.split('|')
+      
+      full_names = students[0][1]
 
-    return sorted(students)
+      sort(full_names)
+
+      return full_names
 
 
 def all_names_by_house(filename):
