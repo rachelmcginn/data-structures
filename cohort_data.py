@@ -14,12 +14,19 @@ def all_houses(filename):
     Return:
       - set[str]: a set of strings
     """
+    
+    cohort_data = open(filename)
 
-    houses = set()
+    house_set = set() 
 
-    # TODO: replace this with your code
+    for line in cohort_data:
+      line = line.rstrip()
+      houses = line.split('|')
+      house_set.add(houses[2])
+      if houses[2] == '':
+        house_set.remove('')
 
-    return houses
+    return house_set
 
 
 def students_by_cohort(filename, cohort='All'):
